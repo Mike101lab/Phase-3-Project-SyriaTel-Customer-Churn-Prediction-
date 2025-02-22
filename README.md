@@ -21,7 +21,7 @@ Customer churn is a significant issue in the telecommunications industry, leadin
 Customer churn is a significant challenge in the telecommunications industry, leading to revenue loss and increased acquisition costs. SyriaTel is experiencing a decline in its customer base and wants to identify customers likely to leave before they churn. By predicting churn, the company can take targeted actions such as offering discounts, improving customer service, and personalizing engagement strategies.
 
 ### Dataset
-The dataset used in this project is the SyriaTel Customer Churn Dataset. It contains approximately 3,333 rows and 21 columns.
+The dataset used in this project is the SyriaTel Customer Churn Dataset ("bigml_59c28831336c6604c800002a.csv"). It contains approximately 3,333 rows and 21 columns.
 The dataset includes various customer attributes such as call minutes, service usage, contract type, and customer service interactions. The target variable is churn, indicating whether a customer left the service (1) or remained (0).
 
 ## Data Processing and Model Selection
