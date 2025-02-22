@@ -1,42 +1,41 @@
 # SyriaTel Customer Churn Prediction
 
 ## Overview
-This project aims to predict customer churn for SyriaTel, a telecommunications company. Customer churn is a critical business problem as losing customers directly impacts revenue. By identifying customers who are likely to churn, SyriaTel can take proactive measures to retain them, such as offering personalized plans, discounts, or improved customer service.
+This project aims to predict customer churn for SyriaTel, a telecommunications company. By leveraging machine learning, SyriaTel can proactively identify at-risk customers and implement retention strategies to reduce churn and improve customer satisfaction.
 
-The goal of this project is to build a classification model that predicts whether a customer will churn based on their usage patterns, demographics, and billing information.
+### Business Problem
+Customer churn is a significant issue in the telecommunications industry, leading to revenue loss and increased customer acquisition costs. SyriaTel, a major telecom provider, faces challenges in retaining customers due to factors such as service dissatisfaction, pricing competition, and evolving customer needs. Understanding why customers leave and predicting churn can help SyriaTel implement targeted retention strategies, improve customer satisfaction, and maintain market competitiveness.
+
+1. **Main Objective:**
+   - To develop a predictive model that accurately identifies customers likely to churn from SyriaTel, enabling the company to take proactive measures to retain high-risk customers.
+
+2. **Specific Objectives:**
+   - To analyze customer data and identify key features that influence churn, providing insights into customer behavior and potential business strategies.
+   - To build, evaluate, and compare multiple classification models, ensuring the selection of the most effective model for predicting churn.
+   - To optimize model performance through hyperparameter tuning and threshold adjustment, improving the balance between precision and recall.
+   - To provide actionable recommendations based on model results, helping SyriaTel implement data-driven strategies to reduce churn and improve customer loyalty.
 
 ## Business and Data Understanding
 
-### Stakeholder
-The primary stakeholder is SyriaTel, a telecommunications company interested in reducing customer churn.
-
-### Business Problem
-Customer churn is a significant issue in the telecom industry. SyriaTel wants to identify customers who are likely to stop using their services so they can take targeted retention actions. This project will help SyriaTel:
-
-- Predict which customers are at risk of churning.
-- Understand the key factors driving churn.
-- Develop actionable strategies to retain customers.
+### Business Context
+Customer churn is a significant challenge in the telecommunications industry, leading to revenue loss and increased acquisition costs. SyriaTel is experiencing a decline in its customer base and wants to identify customers likely to leave before they churn. By predicting churn, the company can take targeted actions such as offering discounts, improving customer service, and personalizing engagement strategies.
 
 ### Dataset
-The dataset used in this project is the SyriaTel Customer Churn Dataset from Kaggle. It contains approximately 3,333 rows and 21 columns, including:
-
-- **Target Variable**: `churn` (binary: Yes/No)
-- **Features**: Customer demographics (e.g., state, area code), call details (e.g., total day minutes, total evening calls), and billing information (e.g., total charges, account length)
+The dataset used in this project is the SyriaTel Customer Churn Dataset ("bigml_59c28831336c6604c800002a.csv"). It contains approximately 3,333 rows and 21 columns.
+The dataset includes various customer attributes such as call minutes, service usage, contract type, and customer service interactions. The target variable is churn, indicating whether a customer left the service (1) or remained (0).
 
 ## Data Processing and Model Selection
 
 ### Data Processing
-
-- **Exploratory Data Analysis (EDA):** We performed initial data exploration to understand feature distributions, correlations, and missing values.
+- **Exploratory Data Analysis (EDA):** Performed initial data exploration to understand feature distributions, correlations, and missing values.
 - **Feature Selection:** Based on the EDA, we selected 20 relevant features by removing redundant and low-impact variables.
 - **Data Cleaning:** Null values were handled, and categorical variables were encoded for model compatibility.
-- **Data Balancing:** Since the dataset was imbalanced (fewer churn cases), we applied **SMOTE (Synthetic Minority Over-sampling Technique)** to balance the classes and improve model performance.
+- **Data Balancing:** Since the dataset was imbalanced (fewer churn cases), I applied **SMOTE (Synthetic Minority Over-sampling Technique)** to balance the classes and improve model performance.
 
-### Model Selection and Optimization
-
-- **Baseline Model:** We first implemented a **Logistic Regression model**, but it struggled with recall for the churn class.
-- **Advanced Models:** We then tested **Random Forest**, which showed significantly better performance in recall and precision.
-- **Threshold Tuning:** Instead of using the default 0.5 threshold, we optimized the decision threshold by analyzing precision-recall trade-offs to maximize the F1-score for the churn class.
+## Modeling
+- **Baseline Model:** Implemented a **Logistic Regression model**, but it struggled with recall for the churn class.
+- **Advanced Models:** Tested **Random Forest**, which showed significantly better performance in recall and precision.
+- **Threshold Tuning:** Instead of using the default 0.5 threshold, I optimized the decision threshold by analyzing precision-recall trade-offs to maximize the F1-score for the churn class.
 
 ## Final Model: Random Forest Classifier
 
@@ -67,9 +66,12 @@ The confusion matrix shows that the model correctly predicts a significant porti
 | **No Churn**     | 534     | 32   |
 | **Churn**        | 13      | 88   |
 
+## Recommendations
+- SyriaTel should target high-risk customers with personalized retention offers to reduce churn rates.
+- Customer support quality should be improved by reducing wait times and enhancing service training.
+- Flexible pricing plans and contract incentives should be introduced to encourage long-term commitments.
+- Customer usage patterns should be monitored to offer proactive service recommendations.
+- A real-time churn monitoring system should be deployed to take immediate action on high-risk customers.
+
 ## Conclusion
-
-- The **Random Forest model** successfully identifies customers likely to churn with **high recall and precision**.
-- The model achieves an **F1-score of 80%** for the churn class, ensuring a good balance between false positives and false negatives.
-- The insights from this model can help SyriaTel **proactively engage at-risk customers**, reducing churn rates and improving customer retention strategies.
-
+The final model effectively predicts customer churn, identifying at-risk customers before they leave. By focusing on key churn drivers, SyriaTel can implement targeted retention strategies, such as personalized offers and improved customer support.
