@@ -32,6 +32,7 @@ Customer churn is a significant challenge in the telecommunications industry, le
 - **Feature Selection:** Based on the EDA, we selected 20 relevant features by removing redundant and low-impact variables.
 - **Data Cleaning:** Null values were handled, and categorical variables were encoded for model compatibility.
 - **Data Balancing:** Since the dataset was imbalanced (fewer churn cases), I applied **SMOTE (Synthetic Minority Over-sampling Technique)** to balance the classes and improve model performance.
+- **Cleaned Data:** After completing data processing, I saved the data as "cleaned_telecom_data".
 
 ## Modeling
 - **Baseline Model:** Implemented a **Logistic Regression model**, but it struggled with recall for the churn class.
