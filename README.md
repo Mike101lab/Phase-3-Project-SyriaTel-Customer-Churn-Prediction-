@@ -21,9 +21,9 @@ Customer churn is a significant issue in the telecommunications industry, leadin
 Customer churn is a significant challenge in the telecommunications industry, leading to revenue loss and increased acquisition costs. SyriaTel is experiencing a decline in its customer base and wants to identify customers likely to leave before they churn. By predicting churn, the company can take targeted actions such as offering discounts, improving customer service, and personalizing engagement strategies.
 
 ### Dataset
-The dataset used in this project is the SyriaTel Customer Churn Dataset ("bigml_59c28831336c6604c800002a.csv"). It contains approximately 3,333 rows and 21 columns.
-The dataset includes various customer attributes such as call minutes, service usage, contract type, and customer service interactions. The target variable is churn, indicating whether a customer left the service (1) or remained (0).
-In addition to existing features, we created three new aggregated features—Total Minutes, Total Calls, and Total Charges—to capture overall customer usage patterns. These features help in understanding how total usage contributes to churn.
+- The dataset used in this project is the SyriaTel Customer Churn Dataset ("bigml_59c28831336c6604c800002a.csv"). It contains approximately 3,333 rows and 21 columns.
+- The dataset includes various customer attributes such as call minutes, service usage, contract type, and customer service interactions. The target variable is churn, indicating whether a customer left the service (1) or remained (0).
+- In addition to existing features, I created three new aggregated features—Total Minutes, Total Calls, and Total Charges—to capture overall customer usage patterns. These features help in understanding how total usage contributes to churn.
 
 ## Data Processing and Model Selection
 
@@ -32,6 +32,7 @@ In addition to existing features, we created three new aggregated features—Tot
 - **Feature Selection:** Based on the EDA, we selected 20 relevant features by removing redundant and low-impact variables.
 - **Data Cleaning:** Null values were handled, and categorical variables were encoded for model compatibility.
 - **Data Balancing:** Since the dataset was imbalanced (fewer churn cases), I applied **SMOTE (Synthetic Minority Over-sampling Technique)** to balance the classes and improve model performance.
+- **Cleaned Data:** After completing data processing, I saved the data as "cleaned_telecom_data".
 
 ## Modeling
 - **Baseline Model:** Implemented a **Logistic Regression model**, but it struggled with recall for the churn class.
